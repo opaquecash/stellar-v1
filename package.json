@@ -1,0 +1,25 @@
+{
+  "name": "opaque-stellar",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "deploy": "tsx scripts/deploy-contracts.ts",
+    "deploy:testnet": "tsx scripts/deploy-contracts.ts --network testnet",
+    "deploy:mainnet": "tsx scripts/deploy-contracts.ts --network mainnet",
+    "verify:deployment": "tsx scripts/verify-deployment-manifest.ts",
+    "verify:deployment:strict": "tsx scripts/verify-deployment-manifest.ts --strict",
+    "verify:security-audit": "tsx scripts/verify-security-audit.ts --network mainnet",
+    "update:manifest-wasm": "tsx scripts/update-manifest-wasm-hashes.ts",
+    "build:scanner": "tsx scripts/build-scanner-wasm.ts",
+    "fetch:circuits": "tsx scripts/fetch-circuit-artifacts.ts",
+    "verify:artifacts": "tsx scripts/verify-artifact-manifest.ts",
+    "update:artifacts": "tsx scripts/update-artifact-manifest.ts --sync-deployments --embedded-vk",
+    "prepare:frontend": "tsx scripts/prepare-frontend-artifacts.ts",
+    "test:circuits": "npm run test:regression --prefix circuits"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}
