@@ -1,0 +1,24 @@
+{
+  "name": "opaque-circuits",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "circom stealth_attestation.circom --r1cs --wasm --sym --c -o build/",
+    "setup": "snarkjs groth16 setup build/stealth_attestation.r1cs pot16_final.ptau build/stealth_attestation_0000.zkey",
+    "contribute": "snarkjs zkey contribute build/stealth_attestation_0000.zkey build/stealth_attestation_final.zkey --name='Opaque Phase 1'",
+    "export-vkey": "snarkjs zkey export verificationkey build/stealth_attestation_final.zkey build/verification_key.json",
+    "export-sol": "snarkjs zkey export solidityverifier build/stealth_attestation_final.zkey build/Groth16Verifier.sol",
+    "prove": "snarkjs groth16 prove build/stealth_attestation_final.zkey build/stealth_attestation_js/witness.wtns build/proof.json build/public.json",
+    "verify": "snarkjs groth16 verify build/verification_key.json build/public.json build/proof.json",
+    "test:regression": "tsx test/regression.ts",
+    "fixtures:generate": "tsx scripts/generate-fixtures.ts"
+  },
+  "devDependencies": {
+    "circomlib": "^2.0.5",
+    "circomlibjs": "^0.1.7",
+    "snarkjs": "^0.7.5",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}
