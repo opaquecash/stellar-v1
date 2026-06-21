@@ -1,0 +1,47 @@
+languages:
+  - rust
+  - javascript
+  - typescript
+
+version: 2
+
+rust:
+  # Update dependencies for the entire workspace
+  # Group updates by major version to reduce PR noise
+  update_schedule: "weekly"
+  # Target all workspaces (including crates in Cargo.toml)
+  target: "workspace"
+
+javascript:
+  # Update dependencies for the root package.json
+  # Group updates by major version to reduce PR noise
+  update_schedule: "weekly"
+  directories:
+    - "/"
+
+typescript:
+  # Update dependencies for the frontend package.json
+  # Group updates by major version to reduce PR noise
+  updatechedule: "weekly"
+  directories:
+    - "frontend"
+
+javascript:
+  # Update dependencies for the circuits package.json
+  # Group updates by major version to reduce PR noise
+  update_schedule: "weekly"
+  directories:
+    - "circuits"
+
+# Optional: You can also specify specific packages or ranges
+# For example, to target only specific packages:
+# javascript:
+#   directories:
+#     - "frontend"
+#     - "circuits"
+#   update_schedule: "monthly"
+#   package_specific:
+#     - package_name: "react"
+#       update_schedule: "bi-weekly"
+#     - package_name: "typescript"
+#       update_schedule: "quarterly"
