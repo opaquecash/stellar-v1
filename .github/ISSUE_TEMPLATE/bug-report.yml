@@ -1,0 +1,17 @@
+name: Bug Report
+about: Report a bug you've encountered
+title: 'Bug Report: [Component] - [Error Message]'
+labels: bug, needs-verification
+body: |
+  - **Component**: [e.g., Auth, UI, Backend]
+  - **Environment**:
+    - OS:
+    - Browser (if applicable):
+    - Version:
+  - **Steps to reproduce**:
+    1.
+    2.
+    3.
+  - **Expected behavior**:
+  - **Actual behavior**:
+  - **Screenshots or logs** (if applicable):
