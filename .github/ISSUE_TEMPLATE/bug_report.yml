@@ -1,0 +1,88 @@
+name: Bug report
+description: Report a reproducible problem in Opaque Stellar.
+title: "[Bug]: "
+labels:
+  - bug
+  - dx
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Opaque Stellar. Do not report security vulnerabilities here; use the private security advisory link from the issue chooser instead.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What went wrong, and what did you expect to happen?
+      placeholder: I expected ..., but ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: Provide the smallest set of steps or commands that reproduces the issue.
+      placeholder: |
+        1. Run ...
+        2. Open ...
+        3. See ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      multiple: true
+      options:
+        - Soroban contracts
+        - Frontend wallet
+        - Scanner / WASM
+        - Circuits / proofs
+        - Deployment / CI
+        - Documentation
+        - Not sure
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: "macOS 15.5, Ubuntu 24.04, Windows 11, etc."
+    validations:
+      required: true
+
+  - type: input
+    id: node-version
+    attributes:
+      label: Node.js version
+      placeholder: "node --version"
+
+  - type: input
+    id: rust-version
+    attributes:
+      label: Rust version
+      placeholder: "rustc --version"
+
+  - type: input
+    id: stellar-cli-version
+    attributes:
+      label: Stellar CLI version
+      placeholder: "stellar --version"
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Paste relevant terminal output, browser console errors, screenshots, or failing test output. Redact secrets and private keys.
+      render: shell
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Link related issues, pull requests, deployments, or docs.
+
