@@ -1,0 +1,26 @@
+name: Bug Report
+about: Report a bug you've encountered
+title: 'Bug Report: [Component] - [Error Message]'
+labels: bug, needs-verification
+body: |
+  Please provide detailed information about the bug you encountered.
+
+  - **Component**: [e.g., UI, API, Core Logic]
+  - **Environment**:
+    - OS: [e.g., macOS 13.4]
+    - Browser/Tool: [e.g., Chrome 115]
+    - Version: [e.g., v2.3.1]
+
+  - **Steps to Reproduce**:
+    1. [Step 1]
+    2. [Step 2]
+    3. ...
+
+  - **Expected Behavior**:
+    [What you expected to happen]
+
+  - **Actual Behavior**:
+    [What actually happened]
+
+  - **Screenshots / Logs**:
+    [Attach relevant screenshots or logs]
