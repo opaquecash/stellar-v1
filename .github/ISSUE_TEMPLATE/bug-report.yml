@@ -1,0 +1,28 @@
+name: Bug Report
+about: Report a bug you've encountered
+title: 'Bug Report: [Component] - [Description]'
+labels: bug
+body: |
+  - Please check that you're using the latest version of the project.
+
+  ## Environment
+  - OS:
+  - Node.js version:
+  - Package version:
+
+  ## Steps to reproduce
+  1.
+  2.
+  3.
+
+  ## Expected behavior
+  Describe what you expected to happen.
+
+  ## Actual behavior
+  Describe what actually happened.
+
+  ## Screenshots
+  If applicable, include screenshots here.
+
+  ## Additional context
+  Any other relevant information.
