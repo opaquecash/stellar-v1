@@ -1,0 +1,5 @@
+issue-templates:
+  - name: bug-report
+    labels: bug
+  - name: feature-request
+    labels: enhancement
