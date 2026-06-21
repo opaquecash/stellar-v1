@@ -1,0 +1,8 @@
+name: Feature Request
+about: Suggest a new feature or improvement
+title: 'Feature Request: [Feature Name]'
+labels: enhancement
+body: |
+  - Why do you want this feature?
+  - How would it benefit users?
+  - Any potential use cases?
