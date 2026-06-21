@@ -1,0 +1,7 @@
+issue-templates:
+  - name: bug_report
+    labels: bug, needs-verification
+  - name: feature_request
+    labels: feature, enhancement
+  - name: security
+    labels: security, triage
