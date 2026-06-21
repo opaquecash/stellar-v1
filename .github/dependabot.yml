@@ -1,0 +1,28 @@
+languages:
+  - rust
+  - javascript
+
+version: 2
+
+rust:
+  # Update dependencies for the entire workspace
+  # Group updates to reduce PR noise
+  update_schedule: "weekly"
+  # Target the root Cargo.toml which defines the workspace
+  target: "Cargo.toml"
+
+javascript:
+  # Update dependencies for root package.json
+  # Group updates to reduce PR noise
+  update_schedule: "weekly"
+  target: "package.json"
+
+  # Update dependencies for frontend/package.json
+  # Group updates to reduce PR noise
+  update_schedule: "weekly"
+  target: "frontend/package.json"
+
+  # Update dependencies for circuits/package.json
+  # Group updates to reduce PR noise
+  update_schedule: "weekly"
+  target: "circuits/package.json"
