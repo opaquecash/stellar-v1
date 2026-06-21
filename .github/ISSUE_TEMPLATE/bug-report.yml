@@ -1,0 +1,13 @@
+name: Bug Report
+about: Report a bug you've encountered
+title: 'Bug Report: [Component] - [Description]'
+labels: bug
+body: |
+  - OS:
+  - Version:
+  - Environment:
+  - Steps to reproduce:
+  - Expected behavior:
+  - Actual behavior:
+  - Logs (if applicable):
+  - Screenshots (if applicable):
