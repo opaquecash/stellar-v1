@@ -1,0 +1,20 @@
+```yaml
+issue-templates:
+  - name: Bug Report
+    label: bug
+    path: .github/ISSUE_TEMPLATE/bug.md
+  - name: Feature Request
+    label: feature
+    path: .github/ISSUE_TEMPLATE/feature.md
+  - name: Security Advisory
+    label: security
+    path: .github/ISSUE_TEMPLATE/security.md
+
+security-contact:
+  - title: Security Vulnerability Report
+    description: Describe a security vulnerability found in this project
+    labels:
+      - security
+      - bug
+    path: .github/ISSUE_TEMPLATE/security.md
+```
