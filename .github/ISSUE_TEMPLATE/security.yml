@@ -1,0 +1,9 @@
+name: Security Issue
+about: Report a security vulnerability
+title: 'Security Issue: [Vulnerability Type]'
+labels: security
+body: |
+  - Vulnerability type (e.g., XSS, CSRF, auth bypass):
+  - Description:
+  - Impact:
+  - POC (if available):
