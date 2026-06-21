@@ -1,0 +1,9 @@
+name: Feature Request
+about: Suggest a new feature or improvement
+title: 'Feature Request: [Feature Name]'
+labels: enhancement, needs-design
+body: |
+  - **Feature name**: [e.g., Dark Mode, Real-time Sync]
+  - **Description**: [Why is this needed? What problem does it solve?]
+  - **Use case**: [Who would benefit from this? How would they use it?]
+  - **Alternatives**: [Any other ways this could be implemented?]
