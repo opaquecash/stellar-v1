@@ -1,0 +1,11 @@
+name: Security Issue
+about: Report a potential security vulnerability
+title: 'Security Issue: [Vulnerability Type]'
+labels: security, triage
+body: |
+  - **Type**: [e.g., CSRF, XSS, Injection, Auth Bypass]
+  - **Description**:
+  - **Steps to reproduce** (if applicable):
+  - **Impact**:
+  - **Patches** (if available):
+  - **References** (if any):
