@@ -1,0 +1,14 @@
+name: Security Issue
+about: Report a security vulnerability
+title: 'Security Issue: [Vulnerability Type]'
+labels: security, triage-needed
+body: |
+  Please report security issues to our security team instead of opening an issue here.
+
+  - **Type**: [e.g., CVE, SSRF, XSS, Injection]
+  - **Description**: [Detailed explanation of the vulnerability]
+  - **Impact**: [What harm could this cause?]
+  - **Patches**: [If available, link to PRs or patches]
+
+  For faster triage, you can also contact us directly:
+  [Security Contact Link]
