@@ -1,0 +1,62 @@
+languages:
+  - rust
+  - javascript
+  - typescript
+
+version: 2
+
+rust:
+  # Update dependencies for the entire workspace
+  # Group updates by major version to reduce PR noise
+  update_schedule: "weekly"
+  target: "Cargo.toml"
+  groups:
+    - name: "Workspace dependencies"
+      files:
+        - "Cargo.toml"
+        - "circuits/Cargo.toml"
+        - "frontend/Cargo.toml"
+        - "scripts/Cargo.toml"
+      update_types:
+        - dependency
+        - dev-dependency
+        - workspace-dependency
+        - workspace-dev-dependency
+
+javascript:
+  # Update dependencies for the root package.json and frontend/package.json
+  # Group updates by major version to reduce PR noise
+  update_schedule: "weekly"
+  target: "package.json"
+  groups:
+    - name: "Root dependencies"
+      files:
+        - "package.json"
+      update_types:
+        - dependency
+        - dev-dependency
+
+typescript:
+  # Update dependencies for the frontend package.json
+  # Group updates by major version to reduce PR noise
+  update_schedule: "weekly"
+  target: "package.json"
+  groups:
+    - name: "Frontend dependencies"
+      files:
+        - "frontend/package.json"
+      update_types:
+        - dependency
+        - dev-dependency
+
+# Optional: Add a separate group for circuits if needed
+javascript:
+  update_schedule: "weekly"
+  target: "package.json"
+  groups:
+    - name: "Circuits dependencies"
+      files:
+        - "circuits/package.json"
+      update_types:
+        - dependency
+        - dev-dependency
