@@ -1,0 +1,19 @@
+```diff
+- error InvalidDatasetHash defined;
++ error InvalidDatasetHash(string $message);
++ 
++ /// @dev Emits when the dataset hash doesn't match the expected merkle root.
++ /// $message can be used for detailed error information (e.g., "wrong dataset hash").
++ function invalidDatasetHash(bytes32 $hash, bytes32 $expectedHash) internal pure returns (error) {
++     if ($hash != $expectedHash) {
++         return InvalidDatasetHash("dataset hash mismatch");
++     }
++     return noError;
++ }
++
++ /// @dev Validates the dataset hash against the expected merkle root.
++ /// Throws InvalidDatasetHash if the hashes don't match.
++ function verifyDatasetHash(bytes32 $datasetHash, bytes32 $expectedHash) internal pure {
++     require($datasetHash == $expectedHash, "Invalid dataset hash");
++ }
+```
