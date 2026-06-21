@@ -1,0 +1,30 @@
+name: Bug Report
+about: Report a bug you've encountered
+title: 'Bug Report: [Component] - [Error Message]'
+labels: bug
+body: |
+  - Please check that you're using the latest version of the project.
+  - Describe the issue in detail, including steps to reproduce.
+  - Include relevant logs, screenshots, or code snippets.
+  - Mention which environment you're using (OS, browser, etc.).
+  - If applicable, specify the expected behavior.
+---
+## Description
+
+[Provide a clear and concise description of the bug.]
+
+## Steps to Reproduce
+
+1. [Step 1]
+2. [Step 2]
+3. ...
+
+## Expected Behavior
+
+[What should happen instead?]
+
+## Environment
+
+- OS:
+- Browser (if applicable):
+- Version:
