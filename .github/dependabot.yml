@@ -1,0 +1,45 @@
+languages:
+  - "rust"
+  - "javascript"
+  - "typescript"
+
+version: 2
+
+rust:
+  # Update dependencies for the entire workspace
+  # Group updates by major version to reduce PR noise
+  update_schedule: "weekly"
+  update_config:
+    # Update all dependencies in the workspace
+    # This will include all Cargo.toml files in the workspace
+    # and their respective Cargo.lock files
+    workspace: true
+    # Only update direct dependencies, not transitive
+    direct_only: true
+
+javascript:
+  # Update dependencies for the root package.json
+  # Group updates by major version to reduce PR noise
+  update_schedule: "weekly"
+  update_config:
+    file_name: "package.json"
+    # Only update direct dependencies, not transitive
+    direct_only: true
+
+typescript:
+  # Update dependencies for the frontend package.json
+  # Group updates by major version to reduce PR noise
+  update_schedule: "weekly"
+  update_config:
+    file_name: "package.json"
+    # Only update direct dependencies, not transitive
+    direct_only: true
+
+# Update dependencies for the circuits package.json
+# Group updates by major version to reduce PR noise
+javascript:
+  update_schedule: "weekly"
+  update_config:
+    file_name: "package.json"
+    # Only update direct dependencies, not transitive
+    direct_only: true
