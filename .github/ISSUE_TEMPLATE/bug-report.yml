@@ -1,0 +1,16 @@
+name: Bug Report
+about: Report a bug you've encountered
+title: 'Bug Report: [Component] - [Error Message]'
+labels: bug, needs-verification
+body: |
+  - **Component**: [e.g., UI, API, Core]
+  - **Version**: [e.g., v1.2.3]
+  - **Environment**: [e.g., Chrome 120, macOS]
+  - **Steps to reproduce**:
+    1.
+    2.
+    3.
+  - **Expected behavior**:
+  - **Actual behavior**:
+  - **Logs/Screenshots**:
+    - [Attach logs or screenshots here]
