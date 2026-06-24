@@ -1,0 +1,12 @@
+---
+labels:
+  - bug
+  - feature-request
+  - security
+
+default-label: bug
+
+issue-templates:
+  bug: .github/ISSUE_TEMPLATE/bug.md
+  feature: .github/ISSUE_TEMPLATE/feature.md
+  security: .github/ISSUE_TEMPLATE/security.md
