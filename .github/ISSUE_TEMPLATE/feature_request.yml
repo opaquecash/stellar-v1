@@ -1,0 +1,68 @@
+name: Feature request
+description: Suggest a scoped improvement for Opaque Stellar.
+title: "[Feature]: "
+labels:
+  - enhancement
+  - documentation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for product, documentation, DX, testing, and tooling improvements. Please keep requests scoped and avoid including secrets or sensitive wallet information.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: What user, developer, operator, or maintainer problem should this solve?
+      placeholder: This would help because ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the change you would like to see.
+      placeholder: |
+        - Add ...
+        - Update ...
+        - Keep ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      multiple: true
+      options:
+        - Soroban contracts
+        - Frontend wallet
+        - Scanner / WASM
+        - Circuits / proofs
+        - Deployment / CI
+        - Documentation
+        - Developer experience
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Share any workarounds, rejected approaches, or related designs.
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact and compatibility
+      description: Note any expected effect on contracts, scanner behavior, event ABI, storage layout, frontend UX, deployments, or docs.
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Link related issues, pull requests, specs, docs, or external references.
+

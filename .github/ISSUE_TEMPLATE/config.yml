@@ -1,0 +1,12 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/opaquecash/stellar-v1/security/advisories/new
+    about: Please use a private GitHub security advisory instead of a public issue.
+  - name: Security policy
+    url: https://github.com/opaquecash/stellar-v1/blob/main/SECURITY.md
+    about: Read the repository security policy, scope, and reporting guidance.
+  - name: Contributing guide
+    url: https://github.com/opaquecash/stellar-v1/blob/main/.github/CONTRIBUTING.md
+    about: Review contribution expectations before opening a pull request.
+
