@@ -1,0 +1,53 @@
+languages:
+  - rust
+  - javascript
+  - typescript
+
+version: 2
+
+rust:
+  # Update dependencies for the entire workspace
+  # Group updates by major version to reduce PR noise
+  update_schedule: "weekly"
+  # Target the root Cargo.toml which defines the workspace
+  target: "."
+  # Include all dependencies in the workspace
+  # This will update dependencies across all crates
+  # while keeping breaking changes grouped
+  include:
+    - dependency-names: ["*"]
+      file-names: ["Cargo.toml"]
+
+javascript:
+  # Update dependencies for the root package.json
+  # Group updates by major version to reduce PR noise
+  update_schedule: "weekly"
+  target: "package.json"
+  # Include all dependencies in the root package
+  include:
+    - dependency-names: ["*"]
+
+typescript:
+  # Update dependencies for the frontend package.json
+  # Group updates by major version to reduce PR noise
+  update_schedule: "weekly"
+  target: "frontend/package.json"
+  # Include all dependencies in the frontend package
+  include:
+    - dependency-names: ["*"]
+
+typescript:
+  # Update dependencies for the circuits package.json
+  # Group updates by major version to reduce PR noise
+  update_schedule: "weekly"
+  target: "circuits/package.json"
+  # Include all dependencies in the circuits package
+  include:
+    - dependency-names: ["*"]
+
+# Optional: You can also configure specific update schedules per dependency
+# For example:
+#   update_schedule: "monthly"
+#   include:
+#     - dependency-names: ["@some-org/some-package"]
+#       file-names: ["package.json"]
