@@ -1,0 +1,38 @@
+languages:
+  - rust
+  - javascript
+  - typescript
+
+version: 2
+
+rust:
+  # Update dependencies for the entire workspace
+  # Group updates to reduce PR noise
+  update_schedule: "weekly"
+  # Target specific workspaces (e.g., lib, apps, crates)
+  # If not specified, all workspaces are targeted
+  target: "."
+
+javascript:
+  # Update dependencies for the root package.json
+  # Group updates to reduce PR noise
+  update_schedule: "weekly"
+  # Target specific directories
+  # If not specified, the root package.json is targeted
+  target: "."
+
+typescript:
+  # Update dependencies for the frontend package.json
+  # Group updates to reduce PR noise
+  update_schedule: "weekly"
+  # Target specific directories
+  # If not specified, the frontend package.json is targeted
+  target: "frontend"
+
+typescript:
+  # Update dependencies for the circuits package.json
+  # Group updates to reduce PR noise
+  update_schedule: "weekly"
+  # Target specific directories
+  # If not specified, the circuits package.json is targeted
+  target: "circuits"
