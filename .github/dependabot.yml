@@ -1,0 +1,24 @@
+name: dependabot
+
+schedule:
+  summary: Keep dependencies up to date across all tools
+  timezone: America/New_York
+  interval: monthly
+  includes:
+    - package: "Cargo.toml"
+      proxy: https://mirrors.ustc.cn/cargo/
+    - package: "package.json"
+      proxy: https://registry.npms.org/
+    - package: "frontend/Cargo.toml"
+      proxy: https://mirrors.ustc.cn/cargo/
+    - package: "circuits/package.json"
+      proxy: https://registry.npms.org/
+
+update:
+  schedule: daily
+  labels: dependabot, auto-update
+  autoMerge: true
+  allowedHosts:
+    - github.com
+    - npmjs.com
+    - crates.io
