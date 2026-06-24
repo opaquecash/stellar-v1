@@ -1,0 +1,11 @@
+name: Security Issue
+about: Report a security vulnerability
+title: 'Security Issue: [Vulnerability Type]'
+labels: security, triage
+body: |
+  - **Type**: [e.g., XSS, CSRF, Auth Bypass, Data Leak]
+  - **Description**:
+  - **Steps to reproduce** (if applicable):
+  - **Impact**:
+  - **Patches** (if available):
+  - **Contact**: Please reach out via the security contact in SECURITY.md.
