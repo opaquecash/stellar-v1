@@ -1,0 +1,17 @@
+name: Security Issue
+about: Report a security vulnerability
+title: 'Security Issue: [Vulnerability Type]'
+labels: security
+body: |
+  - Please read the SECURITY.md for details on how to report security issues.
+
+  ## Vulnerability Details
+  - Type: [e.g., XSS, CSRF, Injection, Privilege Escalation]
+  - Impact: [e.g., data loss, unauthorized access]
+  - POC (Proof of Concept): [paste or attach]
+
+  ## Affected Version
+  Specify the version(s) of the project affected.
+
+  ## Additional Context
+  Any other relevant information.

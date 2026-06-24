@@ -1,0 +1,16 @@
+name: Feature Request
+about: Suggest a new feature or improvement
+title: 'Feature Request: [Feature Name]'
+labels: enhancement
+body: |
+  ## Feature description
+  A clear and concise description of what the feature should do.
+
+  ## Motivation
+  Why is this feature important or needed?
+
+  ## Example usage
+  Provide examples of how this feature would be used.
+
+  ## Additional context
+  Any other relevant information.
