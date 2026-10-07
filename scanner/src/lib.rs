@@ -675,26 +675,17 @@ fn parse_hex32(hex: &str) -> Result<[u8; 32], JsValue> {
 }
 
 fn bytes_to_decimal_string(bytes: &[u8; 32]) -> String {
-    let mut val = [0u64; 4];
-    for i in 0..4 {
-        let offset = i * 8;
-        for j in 0..8 {
-            val[3 - i] = (val[3 - i] << 8) | bytes[offset + j] as u64;
-        }
-    }
-    // Simple big-endian to decimal: treat as u256
-    let mut hex_str = String::with_capacity(64);
-    for b in bytes {
-        hex_str.push_str(&format!("{:02x}", b));
-    }
-    // Convert hex to decimal string using u128 pairs
-    let hex_str = hex_str.trim_start_matches('0');
-    if hex_str.is_empty() {
+    if bytes.iter().all(|&b| b == 0) {
         return "0".to_string();
     }
-    // For field elements, use the hex representation as-is for the circuit
-    // (circom accepts both hex and decimal)
-    format!("0x{}", bytes.iter().map(|b| format!("{:02x}", b)).collect::<String>())
+    // For field elements, format as 0x-prefixed hex string for the circuit
+    let mut out = String::with_capacity(66);
+    out.push_str("0x");
+    for &b in bytes {
+        use std::fmt::Write;
+        let _ = write!(out, "{:02x}", b);
+    }
+    out
 }
 
 // =============================================================================
@@ -872,7 +863,7 @@ mod wasm_boundary_tests {
 
     #[test]
     fn rejects_long_hex32() {
-        assert!(parse_hex32(&"0x".to_string() + &"ab".repeat(33)).is_err());
+        assert!(parse_hex32(&format!("0x{}", "ab".repeat(33))).is_err());
     }
 
     #[test]
@@ -887,7 +878,7 @@ mod wasm_boundary_tests {
 
     #[test]
     fn accepts_valid_hex32() {
-        assert!(parse_hex32(&"0x".to_string() + &"ab".repeat(32)).is_ok());
+        assert!(parse_hex32(&format!("0x{}", "ab".repeat(32))).is_ok());
     }
 
     #[test]
@@ -1138,5 +1129,49 @@ mod pubkey_validation_tests {
     #[test]
     fn rejects_wrong_length() {
         assert!(parse_compressed_pubkey(&GENERATOR_COMPRESSED[..32]).is_err());
+    }
+}
+
+// =============================================================
+// bytes_to_decimal_string — field element string conversion (#48)
+// =============================================================
+
+#[cfg(test)]
+mod bytes_to_decimal_string_tests {
+    use super::*;
+
+    #[test]
+    fn test_bytes_to_decimal_string_all_zeros() {
+        let bytes = [0u8; 32];
+        assert_eq!(bytes_to_decimal_string(&bytes), "0");
+    }
+
+    #[test]
+    fn test_bytes_to_decimal_string_leading_zeros() {
+        let mut bytes = [0u8; 32];
+        bytes[31] = 1;
+        assert_eq!(
+            bytes_to_decimal_string(&bytes),
+            "0x0000000000000000000000000000000000000000000000000000000000000001"
+        );
+    }
+
+    #[test]
+    fn test_bytes_to_decimal_string_max_value() {
+        let bytes = [0xffu8; 32];
+        assert_eq!(
+            bytes_to_decimal_string(&bytes),
+            "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+        );
+    }
+
+    #[test]
+    fn test_bytes_to_decimal_string_representative_bytes() {
+        let mut bytes = [0u8; 32];
+        for i in 0..32 {
+            bytes[i] = i as u8;
+        }
+        let expected = format!("0x{}", hex::encode(bytes));
+        assert_eq!(bytes_to_decimal_string(&bytes), expected);
     }
 }
